@@ -171,10 +171,10 @@ public class registerStudent extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srm","root","Som@j5803d");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srms","root","Dp19091996@");
             
             Statement st=con.createStatement();
-            ResultSet rs=st.executeQuery("Select * from student");
+            ResultSet rs=st.executeQuery("Select * from students");
             
             jTable1.setModel(DbUtils.resultSetToTableModel(rs)); 
             

@@ -367,9 +367,9 @@ public class studentHome extends javax.swing.JFrame {
             
             String rollno=jTextField3.getText();
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srm","root","Som@j5803d");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srms","root","Dp19091996@");
            Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select * from student inner join result where student.rollno='"+rollno+"' and result.rollno= '"+rollno+"' ");
+           ResultSet rs=st.executeQuery("select * from students inner join result where students.rollno='"+rollno+"' and result.rollno= '"+rollno+"' ");
             if(rs.next()){
                 jTextField1.setText(rs.getString(2));
                 jTextField2.setText(rs.getString(4));

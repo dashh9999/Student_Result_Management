@@ -256,7 +256,7 @@ public class index extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String course=(String)jComboBox1.getSelectedItem();
-        String branch=(String)jComboBox2.getSelectedItem();
+        String branchname=(String)jComboBox2.getSelectedItem();
         String rollno=jTextField1.getText();
         String name=jTextField2.getText();
         String gender=(String)jComboBox3.getSelectedItem();
@@ -264,10 +264,10 @@ public class index extends javax.swing.JFrame {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srm","root","Som@j5803d");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srms","root","Dp19091996@");
             
             Statement st=con.createStatement();
-            st.executeUpdate("insert into student(rollno,course,branch,name,gender,fathername)values('"+rollno+"','"+course+"','"+branch+"','"+name+"','"+gender+"','"+fathername+"')");
+            st.executeUpdate("insert into students(rollno,course,branchname,name,gender,fathername)values('"+rollno+"','"+course+"','"+branchname+"','"+name+"','"+gender+"','"+fathername+"')");
             JOptionPane.showMessageDialog(null,"Data Updated Successfully");
             setVisible(false);
             new index().setVisible(true);
